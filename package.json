@@ -1,0 +1,32 @@
+{
+  "name": "tw-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tw-start": "tailwindcss build ./src/css/tailwind.scss -o ./public/css/dev/tailwind.scss && node-sass ./public/css/dev/tailwind.scss ./public/css/dev/tailwind.css",
+    "tw-prod": "cross-env NODE_ENV=production postcss build ./src/css/tailwind.scss -o ./public/css/dev/tailwind-min.scss && node-sass ./public/css/dev/tailwind-min.scss ./public/css/tailwind-min.css --output-style compressed",
+    "tw-watch": "onchange 'tailwind.config.js' 'src/**/*.scss' -- npm run tw-start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/line-clamp": "^0.2.0",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.9",
+    "tailwindcss": "^2.0.4"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "cssnano": "^4.1.10",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1"
+  }
+}
