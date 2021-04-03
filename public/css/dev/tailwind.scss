@@ -192,6 +192,11 @@ Add the correct display in Chrome and Safari.
  * Removes the default spacing and border for appropriate elements.
  */
 
+
+h1 {
+  margin: 0;
+}
+
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
  * results in a loss of the default `button` focus styles.
@@ -272,6 +277,11 @@ body {
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
 
+h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 /**
  * Reset links to optimize for opt-in styling instead of
  * opt-out.
@@ -307,34 +317,33 @@ body {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-.bg-gray-100 {
+.hello {
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
-}
-
-.flex {
   display: flex;
-}
-
-.items-center {
   align-items: center;
-}
-
-.justify-center {
   justify-content: center;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-.min-h-screen {
   min-height: 100vh;
+  width: 100%;
+  h1 {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 3.75rem;
+    line-height: 1;
+    --tw-text-opacity: 1;
+    color: rgba(67, 56, 202, var(--tw-text-opacity));
+  }
+  h1:hover {
+    --tw-text-opacity: 1;
+    color: rgba(99, 102, 241, var(--tw-text-opacity));
+  }
+  h1 {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    transition-timing-function: linear;
+    transition-duration: 300ms;
+  }
 }
 
 * {
@@ -348,17 +357,4 @@ body {
   --tw-ring-color: rgba(59, 130, 246, 0.5);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
-}
-
-.text-indigo-700 {
-  --tw-text-opacity: 1;
-  color: rgba(67, 56, 202, var(--tw-text-opacity));
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.w-full {
-  width: 100%;
 }
